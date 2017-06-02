@@ -3,3 +3,7 @@ https://www.safaribooksonline.com/blog/2013/07/25/an-arduino-powered-bbq-thermom
 
 
 Before to start node application, you must upload code librabry called StandardFirmata
+
+Run the command $npm install johnny-five. 
+ 
+This will install the NodeJS package for Johnny-Five, making it available for any NodeJS files in that folder
