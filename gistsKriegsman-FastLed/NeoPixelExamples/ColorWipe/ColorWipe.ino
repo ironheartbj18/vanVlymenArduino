@@ -1,6 +1,6 @@
 #include <Adafruit_NeoPixel.h>
 #define PIN 6
-#define NUM_LEDS 60
+#define NUM_LEDS 150
 // Parameter 1 = number of pixels in strip
 // Parameter 2 = pin number (most are valid)
 // Parameter 3 = pixel type flags, add together as needed:
@@ -17,12 +17,21 @@ void setup() {
 
 // *** REPLACE FROM HERE ***
 void loop() {
-  colorWipe(0x00,0xff,0x00, 50);
-  colorWipe(0x00,0x00,0x00, 50);
+  colorWipe(0x00,0xff,0x00, 10);
+  colorWipe(0x00,0x00,0x00, 10);
+  colorWipeReverse(0x00,0xff,0x00, 10);
+  colorWipeReverse(0x00,0x00,0x00, 10);
 }
 
 void colorWipe(byte red, byte green, byte blue, int SpeedDelay) {
-  for(uint16_t i=0; i<NUM_LEDS; i++) {
+  for(uint16_t i=35; i<NUM_LEDS; i++) {
+      setPixel(i, red, green, blue);
+      showStrip();
+      delay(SpeedDelay);
+  }
+}
+void colorWipeReverse(byte red, byte green, byte blue, int SpeedDelay) {
+  for(uint16_t i=NUM_LEDS; i>35; i--) {
       setPixel(i, red, green, blue);
       showStrip();
       delay(SpeedDelay);

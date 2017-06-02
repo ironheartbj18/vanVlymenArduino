@@ -1,16 +1,16 @@
 #include "FastLED.h"
-#define NUM_LEDS 60 
+#define NUM_LEDS 150 
 CRGB leds[NUM_LEDS];
 #define PIN 6 
 
 void setup()
 {
-  FastLED.addLeds<WS2811, PIN, GRB>(leds, NUM_LEDS).setCorrection( TypicalLEDStrip );
+  FastLED.addLeds<WS2812B, PIN, RGB>(leds, NUM_LEDS).setCorrection( TypicalLEDStrip );
 }
 
 // *** REPLACE FROM HERE ***
 void loop() {
-  RunningLights(0xff,0xff,0x00, 50);
+  RunningLights(0x00,0xc0,0xcb, 10);
 }
 
 void RunningLights(byte red, byte green, byte blue, int WaveDelay) {

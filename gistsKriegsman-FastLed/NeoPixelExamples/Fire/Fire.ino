@@ -1,6 +1,6 @@
 #include <Adafruit_NeoPixel.h>
 #define PIN 6
-#define NUM_LEDS 60
+#define NUM_LEDS 150
 // Parameter 1 = number of pixels in strip
 // Parameter 2 = pin number (most are valid)
 // Parameter 3 = pixel type flags, add together as needed:
@@ -48,7 +48,7 @@ void Fire(int Cooling, int Sparking, int SpeedDelay) {
   }
 
   // Step 4.  Convert heat to LED colors
-  for( int j = 0; j < NUM_LEDS; j++) {
+  for( int j = 35; j < NUM_LEDS; j++) {
     setPixelHeatColor(j, heat[j] );
   }
 

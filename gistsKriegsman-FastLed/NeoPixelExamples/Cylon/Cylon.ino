@@ -1,6 +1,6 @@
 #include <Adafruit_NeoPixel.h>
 #define PIN 6
-#define NUM_LEDS 60
+#define NUM_LEDS 150
 // Parameter 1 = number of pixels in strip
 // Parameter 2 = pin number (most are valid)
 // Parameter 3 = pixel type flags, add together as needed:
@@ -22,7 +22,7 @@ void loop() {
 
 void CylonBounce(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay){
 
-  for(int i = 0; i < NUM_LEDS-EyeSize-2; i++) {
+  for(int i = 55; i < NUM_LEDS-EyeSize-2; i++) {
     setAll(0,0,0);
     setPixel(i, red/10, green/10, blue/10);
     for(int j = 1; j <= EyeSize; j++) {
@@ -35,7 +35,7 @@ void CylonBounce(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, i
 
   delay(ReturnDelay);
 
-  for(int i = NUM_LEDS-EyeSize-2; i > 0; i--) {
+  for(int i = NUM_LEDS-EyeSize-2; i > 55; i--) {
     setAll(0,0,0);
     setPixel(i, red/10, green/10, blue/10);
     for(int j = 1; j <= EyeSize; j++) {

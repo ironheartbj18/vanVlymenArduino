@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "GrillLog": {
+      "applicationId": "ryoXsXg0mMCvqcQMJgOYMIIfA6td2IaKEjM8SmV6"
+    },
+    "_default": {
+      "link": "GrillLog"
+    }
+  }
+}

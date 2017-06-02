@@ -5,10 +5,10 @@
 #endif
 
 
-#define NUM_LEDS      100
+#define NUM_LEDS      150
 #define LED_TYPE   WS2812B
 #define COLOR_ORDER   GRB
-#define DATA_PIN        7
+#define DATA_PIN        6
 //#define CLK_PIN       4
 #define VOLTS          12
 #define MAX_MA       4000

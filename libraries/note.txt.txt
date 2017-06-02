@@ -1,0 +1,5 @@
+Installing Additional Arduino Libraries
+
+1 https://www.arduino.cc/en/hacking/libraries
+
+1 https://www.arduino.cc/en/guide/libraries#toc5
