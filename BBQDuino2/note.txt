@@ -1,0 +1,5 @@
+https://www.safaribooksonline.com/blog/2013/07/25/an-arduino-powered-bbq-thermometer/
+
+
+
+Before to start node application, you must upload code librabry called StandardFirmata
