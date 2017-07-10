@@ -1,7 +1,9 @@
 // https://www.safaribooksonline.com/blog/2013/07/25/an-arduino-powered-bbq-thermometer/
+// resistors required 18k Ohm and 180k Ohm
 var j5 = require("johnny-five");
-var board = new j5.Board();
+var app = require('express')();
 
+var board = new j5.Board();
 var LEDPIN = 8;
 var THMPIN = "A0";
 
@@ -11,18 +13,20 @@ board.on("ready", function(){
 
   var alertTemperatureF = 135;
   var currentTemp;
+  
+    thm.on("change",  function(thmVoltage){
+      currentTemp = convertVoltToTemp(thmVoltage);
 
-  thm.on("change",  function(thmVoltage){
-    currentTemp = convertVoltToTemp(thmVoltage);
+        if (currentTemp.tempF  >= alertTemperatureF) {
+          led.on(500);
+        } else {
+          led.off(500);
+        }
 
-    if (currentTemp.tempF  >= alertTemperatureF) {
-      led.on(500);
-    } else {
-      led.off(500);
-    }
+      console.log("Current TempF: ", currentTemp.tempF);
 
-    console.log("Current TempF: ", currentTemp.tempF);
-  });
+    });
+
 
 });
 
@@ -47,4 +51,8 @@ function convertVoltToTemp(volt){
     tempC: tempC,
     tempF: tempF
   };
-}
+};
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000');
+});
